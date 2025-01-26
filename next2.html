@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #6200ea;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .photo {
+            margin-top: 2rem;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #6200ea;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang Lagi!</h1>
+    </header>
+
+    <div class="content">
+        <h2>Halo, <span id="nameDisplay"></span>!</h2>
+        <p>Berikut gambar tambahan untukmu:</p>
+        <img src="" alt="Deskripsi gambar" class="photo" id="userImage">
+
+        <p>Ini adalah kata-kata tambahan yang muncul di halaman ini.</p>
+
+        <div class="buttons">
+            <!-- Tombol Kembali -->
+            <button onclick="window.location.href='next.html?name=' + getNameFromURL()">Kembali</button>
+
+            <!-- Tombol Selanjutnya -->
+            <button onclick="alert('Tidak ada halaman selanjutnya!')">Selesai</button>
+        </div>
+    </div>
+
+    <script>
+        // Mendapatkan nama dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        document.getElementById('nameDisplay').textContent = name;
+
+        // Menampilkan gambar sesuai nama
+        const userImage = document.getElementById('userImage');
+        if (name === 'dapin') {
+            userImage.src = "pink.png"; // Ganti dengan nama file foto sesuai
+        } else if (name === 'fatia') {
+            userImage.src = "pink.png"; // Ganti dengan nama file foto sesuai
+        }
+
+        function getNameFromURL() {
+            return urlParams.get('name');
+        }
+    </script>
+</body>
+</html>

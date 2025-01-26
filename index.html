@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata-kata dan Foto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #6200ea;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PROYEK DAPIN FATIA</h1>
+    </header>
+
+    <div class="content">
+        <p>Masukkan nama Anda:</p>
+        <input type="text" id="nameInput" placeholder="Nama Anda">
+        <button onclick="checkName()">Submit</button>
+        <p id="message" class="error"></p>
+    </div>
+
+    <script>
+        function checkName() {
+            const name = document.getElementById('nameInput').value.trim().toLowerCase();
+            const message = document.getElementById('message');
+
+            if (name === 'dapin') {
+                window.location.href = "next.html?name=dapin";
+            } else if (name === 'fatia') {
+                window.location.href = "next.html?name=fatia";
+            } else {
+                message.textContent = "Masukin nama yg bener!";
+            }
+        }
+    </script>
+</body>
+</html>
